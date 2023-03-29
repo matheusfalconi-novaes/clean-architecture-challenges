@@ -51,7 +51,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
             customerFound.zipcode,
             customerFound.city
         );
-        customer.Address = address;
+        customer.changeAddress(address);
         customer.addRewardPoints(customerFound.rewardPoints);
         if (customerFound.active) {
             customer.activate();
@@ -69,7 +69,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
                 customerModel.zipcode,
                 customerModel.city
             );
-            customer.Address = address;
+            customer.changeAddress(address);
             if (customerModel.active) {
                 customer.activate();
             }

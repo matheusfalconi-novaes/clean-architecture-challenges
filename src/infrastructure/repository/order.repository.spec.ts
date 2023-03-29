@@ -27,8 +27,8 @@ describe("Order repository tests", () => {
             OrderItemModel,
             CustomerModel,
             ProductModel,
-          ]);
-          await sequelize.sync();
+        ]);
+        await sequelize.sync();
     });
 
     afterEach(async () => {
@@ -38,7 +38,7 @@ describe("Order repository tests", () => {
     it("should create a new order", async () => {
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "ZipCode 1", "city 1");
-        customer.Address = address;
+        customer.changeAddress(address);
 
         const product = new Product("123", "Product 1", 10);
 
@@ -78,7 +78,7 @@ describe("Order repository tests", () => {
     it("should update an order", async () => {
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "ZipCode 1", "city 1");
-        customer.Address = address;
+        customer.changeAddress(address);
 
         const product = new Product("123", "Product 1", 10);
 
@@ -92,7 +92,7 @@ describe("Order repository tests", () => {
         await productRepository.create(product);
         await customerRepository.create(customer);
         await orderRepository.create(order);
-        
+
         orderItem.changeItemProperties("New name", 10);
         order.changeItem(orderItem);
 
@@ -123,7 +123,7 @@ describe("Order repository tests", () => {
     it("should find an order", async () => {
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "ZipCode 1", "city 1");
-        customer.Address = address;
+        customer.changeAddress(address);
 
         const product = new Product("123", "Product 1", 10);
 
@@ -146,13 +146,13 @@ describe("Order repository tests", () => {
     it("should find all orders", async () => {
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "ZipCode 1", "city 1");
-        customer.Address = address;
+        customer.changeAddress(address);
 
         const product = new Product("123", "Product 1", 10);
 
         const orderItem = new OrderItem("1", product.name, product.price, product.id, 2);
         const order = new Order("321", customer.id, [orderItem]);
-        
+
         const orderItem2 = new OrderItem("2", product.name, product.price, product.id, 4);
         const order2 = new Order("456", customer.id, [orderItem2]);
 

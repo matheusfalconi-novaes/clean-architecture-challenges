@@ -25,7 +25,7 @@ describe("Customer repository tests", () => {
     it("should create a customer", async () => {
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "000000-000", "city 1");
-        customer.Address = address;
+        customer.changeAddress(address);
 
         const customerRepository = new CustomerRepository();
         await customerRepository.create(customer);
@@ -47,7 +47,7 @@ describe("Customer repository tests", () => {
     it("should update a customer", async () => {
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "000000-000", "city 1");
-        customer.Address = address;
+        customer.changeAddress(address);
 
         const customerRepository = new CustomerRepository();
         await customerRepository.create(customer);
@@ -71,7 +71,7 @@ describe("Customer repository tests", () => {
     it("should find a customer", async () => {
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "000000-000", "city 1");
-        customer.Address = address;
+        customer.changeAddress(address);
 
         const customerRepository = new CustomerRepository();
         await customerRepository.create(customer);
@@ -88,13 +88,13 @@ describe("Customer repository tests", () => {
     it("should find all customers", async () => {
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "000000-000", "city 1");
-        customer.Address = address;
+        customer.changeAddress(address);
         customer.addRewardPoints(10);
         customer.activate();
 
         const customer2 = new Customer("456", "Customer 2");
         const address2 = new Address("Street 2", 2, "111111-111", "city 2");
-        customer2.Address = address2;
+        customer2.changeAddress(address2);
         customer2.addRewardPoints(20);
         customer2.activate();
 
