@@ -1,3 +1,3 @@
-# Fullcycle OrderRepository Challenge
+# Fullcycle DDD Challenges
 
-Project containing the files used to complete the 'Order Repository' Challenge of the Full Cycle 'DDD: Modelagem Tática e Patterns' course.
+Project containing the files used to complete the 'Order Repository' and 'Customer Domain Events' challenges of the Full Cycle course.
