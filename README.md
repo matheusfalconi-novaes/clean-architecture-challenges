@@ -1,3 +1,3 @@
-# Fullcycle DDD Challenges
+# Fullcycle Clean Architecture Challenges
 
-Project containing the files used to complete the 'Order Repository' and 'Customer Domain Events' challenges of the Full Cycle course.
+Project containing the files used to complete the 'Use cases para Product', 'API de Products', 'Notification Pattern em Products' and 'Validação de Products' challenges of the Full Cycle course.
