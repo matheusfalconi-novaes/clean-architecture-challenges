@@ -52,10 +52,10 @@ describe("Integration test update product use case", () => {
             price: 11
         };
 
-        await expect(useCase.execute(input)).rejects.toThrow("Name is required");
+        await expect(useCase.execute(input)).rejects.toThrow("product: Name is required");
 
         input.name = "Product updated";
         input.price = -1;
-        await expect(useCase.execute(input)).rejects.toThrow("Price must be greater than zero");
+        await expect(useCase.execute(input)).rejects.toThrow("product: Price must be greater than zero");
     });
 });
